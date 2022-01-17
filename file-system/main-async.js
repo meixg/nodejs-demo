@@ -9,7 +9,7 @@ async function run() {
         const stats = await fsp.stat(filePath);
         console.log(stats);
 
-        const content = await fsp.readFile(filePath);
+        const content = await fsp.readFile(filePath, 'utf-8');
         console.log(content);
 
         await fsp.writeFile(path.resolve(__dirname, 'new.txt'), content);
